@@ -1,7 +1,7 @@
 ## Hi there 👋
 
-- 🔭 I’m currently working on  Building Brillo — a simple learning tracker.
-- 🌱 I’m currently learning Api design, Node.js, 
+- 🔭 I’m currently working on Building Brillo — a simple learning tracker.
+- 🌱 I’m currently learning Node.js 
 - 👯 I’m looking to collaborate on Opensource Projects and Hackathons
 - 🤔 I’m looking for help with Getting Interships
 - 💬 Ask me about All things frontend and user experience
