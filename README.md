@@ -1,6 +1,6 @@
 <p align="center">
   <!-- Dynamic header image using a typing effect template -->
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Hi+there!+%F0%9F%91%8B;I'm+Davemafy;Software+Engineer" alt="Typing SVG" /></a>
+ <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=900&duration=3000&pause=1000&color=F2F709&center=true&width=435&lines=Hi+there!+%F0%9F%91%8B;I'm+Davemafy;Software+Engineer" alt="Typing SVG" /></a>
 </p>
 
 <p align="center">
@@ -17,8 +17,6 @@
     <img style="border-radius:10px" src="https://hits.sh/github.com/Davemafy/hits.svg?color=FFFFFF&labelColor=131820&style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU%2BR2l0Qm9vazwvdGl0bGU%2BPHBhdGggZD0iTTEwLjgwMiAxNy43YSh0bDMuNTU0LTUuNTQ2LTIuNjU1LS45MDYtLjQ3NC0xLjYzNS0uMDc0LTEuNzY1LjAwNmwtLjI1Mi4xMjVDNy43OCA2LjA0OCAxLjQ2IDkuMTtY...&label=Profile%20Views"/>
   </a>
 </p>
-
-## 👋 Hi there!
 
 I am a performance-driven Software Engineer focused on building high-availability applications and squeezing every millisecond out of the critical rendering path.
 
