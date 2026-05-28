@@ -1,16 +1,44 @@
-## Hi there 👋
+<p align="center">
+  <img src="https://vercel.app" width="100%" />
+</p>
 
-- 🔭 I’m currently working on Building Brillo — a simple learning tracker.
-- 🌱 I’m currently learning Node.js 
-- 👯 I’m looking to collaborate on Opensource Projects and Hackathons
-- 💬 Ask me about All things frontend and user experience
-- 📫 How to reach me: imafidondavid1@gmail.com
-- 😄 Pronouns: He / Him
-- ⚡ Fun fact: I started coding since 12  ( so I technically have 7+ yrs experience dabbling with the web cos I'm 19 now 👀)
+<p align="center">
+  <img src="https://shields.io" />
+  <img src="https://shields.io" />
+  <img src="https://shields.io" />
+</p>
 
-<!--
-**Davemafy/Davemafy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 👋 Hi there!
 
-Here are some ideas to get you started:
+I am a performance-driven Software Engineer focused on building high-availability applications and squeezing every millisecond out of the critical rendering path.
 
--->
+- 💻 **Current Focus:** Scaling **Brillo** (Full-Stack LMS Engine) and mastering enterprise **Node.js** architecture.
+- 🎯 **Frontend Expertise:** Translating intricate design systems into highly fluid interfaces using **GSAP** and **TypeScript**.
+- 🚀 **Impact:** Best known for driving a **74% production payload reduction** at Ortho Tech.
+
+---
+
+## 🛠️ Tech Stack & Arsenal
+
+<p align="left">
+  <img src="https://skillicons.dev" alt="My Skills" />
+</p>
+
+---
+
+## 📊 Real-Time Performance Metrics
+
+<p align="left">
+  <img src="https://vercel.app" height="160" />
+  <img src="https://vercel.app" height="160" />
+</p>
+
+<p align="left">
+  <img src="https://herokuapp.com" height="160" />
+</p>
+
+---
+
+### ⚡ Technical Trivia & Contact
+* ⚡ Started coding at 12 years old—I've spent over a third of my life refining my engineering logic.
+* 📬 Drop me an email: **imafidondavid1@gmail.com**
