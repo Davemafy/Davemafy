@@ -12,95 +12,15 @@
   </a>
 </p>
 
-# David Imafidon
+# Hi, I'm David Imafidon
 
-Computer Science student at FUT Minna building product-focused web apps and growing into full-stack development.
+I am a Computer Science student at FUT Minna building performance-focused web products with React, TypeScript, and modern frontend tools.
 
-I mainly build with **React, TypeScript, Tailwind CSS, and JavaScript**, with a focus on clean interfaces, responsive product flows, and performance. I am currently expanding into backend development with **Node.js, APIs, databases, and system design fundamentals** so I can build more complete products.
+My work sits at the intersection of clean interfaces, product thinking, and web performance. At Ortho Technology, I helped reduce a production landing page payload from **4.7MB to 1.2MB**, improving load experience and reducing unnecessary bandwidth usage.
 
-Some days I am writing code. Some days I am in the market helping my mum serve food. That contrast shapes how I think about software: I want to build tools that are not only visually clean, but useful to real people.
+I have worked on projects like **Brillo**, **Trailer Park**, **Ember & Sage**, and **Sowley AI**, where I focus on turning ideas into usable, responsive, and well-structured products.
 
----
-
-## Featured Work
-
-### Brillo
-A study management platform for students.
-
-- Built with a focus on performance, responsiveness, and user experience
-- Achieved perfect **100/100 Lighthouse scores**
-- Designed to help students organize courses, track progress, and manage notes
-
-**Live:** `add link`  
-**GitHub:** `add link`  
-**Video:** `add link`
-
----
-
-### Trailer Park
-A media discovery app for exploring movies and shows.
-
-- Built during SIWES at Jam-Forte Technologies
-- Expanded from an internship task into a fuller React/TypeScript product
-- Includes routing, reusable components, responsive layouts, discovery flows, and detail pages
-
-**Live:** `add link`  
-**GitHub:** `add link`
-
----
-
-### Ember & Sage
-A restaurant website concept for food businesses.
-
-- Focused on menu discovery, reservations, and online ordering flows
-- Built as a frontend product and future base for backend learning
-- Inspired by real food-business problems I see around me
-
-**Live:** https://embersage.vercel.app  
-**GitHub:** `add link`
-
----
-
-### Sowley AI
-A Figma prototype for a small-business assistant.
-
-- Explores inventory tracking, sales recording, and business insights
-- Inspired by manual record keeping in small businesses
-- Focused on simple tools for local vendors and food businesses
-
-**Prototype:** `add link`
-
----
-
-## Tech Stack
-
-<p align="left">
-  <a href="https://github.com/Davemafy">
-    <img src="https://skillicons.dev/icons?i=react,ts,js,html,css,nodejs,git,github,vscode,tailwind,figma&perline=12" alt="Tech stack" />
-  </a>
-</p>
-
-**Frontend:** React · TypeScript · JavaScript · Tailwind CSS · HTML · CSS  
-**Tools:** Git · GitHub · Vercel · Figma · VS Code  
-**Currently learning:** Node.js · REST APIs · Databases · Testing · System design basics
-
----
-
-## What I Care About
-
-I care about turning real-world problems into useful software.
-
-Right now, I am especially interested in:
-
-- Product-focused frontend engineering
-- Performance and responsive UI
-- Student-focused tools
-- Small-business software
-- Backend systems that make products more complete
-
-I do not wait for perfect conditions before building. I pay attention to the problems around me, use what I have, and keep turning what I learn into useful software.
-
----
+I currently build mainly with **React, TypeScript, Tailwind CSS, JavaScript, and GSAP**, and I am expanding into backend development with **Node.js, APIs, databases, and system design fundamentals** so I can build more complete systems.
 
 ## Contact
 
