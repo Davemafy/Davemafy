@@ -12,30 +12,17 @@
     <img style="border-radius:10px" src="https://hits.sh/github.com/Davemafy/hits.svg?color=FFFFFF&labelColor=131820&style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU%2BR2l0Qm9vazwvdGl0bGU%2BPHBhdGggZD0iTTEwLjgwMiAxNy43YSh0bDMuNTU0LTUuNTQ2LTIuNjU1LS45MDYtLjQ3NC0xLjYzNS0uMDc0LTEuNzY1LjAwNmwtLjI1Mi4xMjVDNy43OCA2LjA0OCAxLjQ2IDkuMTtY...&label=Profile%20Views"/>
   </a>
 </p>
-# Hi, I'm David Imafidon 👋
 
-> Computer Science Student at **FUT Minna** | Performance-Focused Web Engineer
+I am a Software Engineer focused on building high-availability applications and squeezing every millisecond out of the critical rendering path. Scaling **Brillo** (Full-Stack LMS Engine) and mastering enterprise **Node.js** architecture. Translating intricate design systems into highly fluid interfaces using **GSAP** and **TypeScript**. Best known for driving a **74% production payload reduction** at Ortho Tech.
 
----
+## 🛠️ Tech Stack & Arsenal
 
-### 🚀 About Me
-I build performance-driven web products at the intersection of **clean interfaces, product thinking, and core performance**. 
-
-* **Impact Highlight:** Reduced an Ortho Technology landing page payload from **4.7MB to 1.2MB** (~74% reduction), significantly improving load speed and saving bandwidth.
-* **Current Focus:** Expanding into backend development with **Node.js, APIs, Databases, and System Design** to build complete, full-stack systems.
-
----
-
-### 🛠️ Key Projects
-* **Brillo** — Student management platform focused on high performance & UX.
-* **Trailer Park** — Movie discovery platform built with React & TypeScript.
-* **Ember & Sage** — Restaurant ordering and reservation platform.
-* **Sowley AI** — Business tracking concept for local vendors.
-
----
-
-### 🧰 Tech Stack
-`React` • `TypeScript` • `Tailwind CSS` • `JavaScript` • `GSAP` • `Node.js`
+<p align="left">
+  <!-- Configured exactly to display your actual tech stack from your description & screenshot -->
+  <a href="https://github.com/Davemafy">
+    <img src="https://skillicons.dev/icons?i=react,ts,js,html,css,nodejs,git,github,vscode,tailwind,figma&perline=12" alt="My Skills" />
+  </a>
+</p>
 
 ---
 
