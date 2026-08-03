@@ -10,7 +10,7 @@
   </a>
 </p>
 
-Building web products from limited hardware, unstable power, and real-world constraints.
+Building web products from real-world constraints.
 
 Currently shipping **Brillo**, a Supabase-backed student learning workspace, and **Ember & Sage**, a restaurant website for food businesses. Built **Trailer Park** during SIWES. Made **6 open-source/community PRs**, with **5 merged**.
 
