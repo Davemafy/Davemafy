@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>David Imafidon — Proof of Work</title>
 
   <style>
@@ -107,6 +108,10 @@
       padding: 22px;
     }
 
+    .wide-card {
+      grid-column: 1 / -1;
+    }
+
     .card h2 {
       margin: 0 0 8px;
       font-size: 22px;
@@ -136,10 +141,6 @@
       font-size: 14px;
       color: var(--text);
       border-bottom: 1px solid var(--accent);
-    }
-
-    .card-links a:hover {
-      color: var(--accent);
     }
 
     .note {
@@ -356,37 +357,70 @@
     <section>
       <p class="section-title">Open Source</p>
 
-      <article class="card">
-        <p class="meta">GitHub · Pull Requests · Community Projects</p>
+      <div class="grid">
+        <article class="card wide-card">
+          <p class="meta">GitHub · Pull Requests · Community Projects</p>
 
-        <h2>Open Source Contributions</h2>
+          <h2>Open Source Contributions</h2>
 
-        <p>
-          I have made 6 open-source/community pull requests, with 5 merged,
-          including layout fixes for Hausa and Igbo language support, UI fixes,
-          event/content updates, and image asset optimization. These contributions
-          helped me practice reading existing codebases, following project patterns,
-          and responding to review feedback.
-        </p>
+          <p>
+            I have made 6 open-source/community pull requests, with 5 merged,
+            across React Native Nigeria community projects. The work includes
+            Hausa and Igbo layout fixes, event/content updates, invisible text fixes,
+            image/background updates, and asset-related improvements.
+          </p>
 
-        <div class="card-links">
-          <a
-            href="https://github.com/pulls?q=is%3Apr+author%3ADavemafy+is%3Amerged+archived%3Afalse"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Merged Pull Requests
-          </a>
+          <div class="card-links">
+            <a
+              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/83"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hausa Layout Fix
+            </a>
 
-          <a
-            href="https://github.com/pulls?q=is%3Apr+author%3ADavemafy+archived%3Afalse"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View All Pull Requests
-          </a>
-        </div>
-      </article>
+            <a
+              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/82"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hausa/Igbo Cards
+            </a>
+
+            <a
+              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/98"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Event Update
+            </a>
+
+            <a
+              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/99"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Text Visibility Fix
+            </a>
+
+            <a
+              href="https://github.com/react-native-nigeria-community/iboju.app/pull/12"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Iboju UI Update
+            </a>
+
+            <a
+              href="https://github.com/react-native-nigeria-community/iboju.app/pull/8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open PR
+            </a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <p class="note">
