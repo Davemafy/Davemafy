@@ -1,5 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  width="128"
+  height="128"
   viewBox="0 0 128 128"
   role="img"
   aria-labelledby="title description"
@@ -7,11 +9,11 @@
 >
   <title id="title">DI monogram</title>
   <desc id="description">
-    A burnt orange geometric D with an I cut from its center as negative space.
+    A burnt orange rounded D with a vertical I cut through it as negative space.
   </desc>
   <path
     fill="#D9471E"
     fill-rule="evenodd"
-    d="M26 14h37c28.72 0 52 22.39 52 50s-23.28 50-52 50H26l-8-8V22l8-8Zm18 21h32v12H66v34h10v12H44V81h10V47H44V35Z"
+    d="M28 14h34c29.27 0 53 22.39 53 50s-23.73 50-53 50H28c-7.73 0-14-6.27-14-14V28c0-7.73 6.27-14 14-14Zm26 20h12v60H54V34Z"
   />
 </svg>
