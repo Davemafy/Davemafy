@@ -2,18 +2,21 @@
   xmlns="http://www.w3.org/2000/svg"
   width="128"
   height="128"
-  viewBox="0 0 128 128"
+  viewBox="0 0 64 64"
   role="img"
   aria-labelledby="title description"
   shape-rendering="geometricPrecision"
 >
   <title id="title">DI monogram</title>
   <desc id="description">
-    A burnt orange rounded D with a vertical I cut through it as negative space.
+    A minimal monoline DI ligature with a shared vertical spine.
   </desc>
   <path
-    fill="#D9471E"
-    fill-rule="evenodd"
-    d="M28 14h34c29.27 0 53 22.39 53 50s-23.73 50-53 50H28c-7.73 0-14-6.27-14-14V28c0-7.73 6.27-14 14-14Zm26 20h12v60H54V34Z"
+    d="M18 10v44M10 10h21c14 0 25 9.85 25 22S45 54 31 54H10"
+    fill="none"
+    stroke="#F4F1EA"
+    stroke-width="8"
+    stroke-linecap="square"
+    stroke-linejoin="round"
   />
 </svg>
