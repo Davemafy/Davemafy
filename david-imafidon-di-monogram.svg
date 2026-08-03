@@ -1,0 +1,17 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 128 128"
+  role="img"
+  aria-labelledby="title description"
+  shape-rendering="geometricPrecision"
+>
+  <title id="title">DI monogram</title>
+  <desc id="description">
+    A burnt orange geometric D with an I cut from its center as negative space.
+  </desc>
+  <path
+    fill="#D9471E"
+    fill-rule="evenodd"
+    d="M26 14h37c28.72 0 52 22.39 52 50s-23.28 50-52 50H26l-8-8V22l8-8Zm18 21h32v12H66v34h10v12H44V81h10V47H44V35Z"
+  />
+</svg>
