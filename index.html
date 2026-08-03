@@ -3,62 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
 
   <title>David Imafidon — Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="shortcut icon" href="/logo.svg" />
 
   <style>
     :root {
-      --bg: #0b0d10;
-      --card: #14171c;
-      --text: #f4f4f5;
+      --bg: #07080a;
+      --bg-soft: #0b0d10;
+      --card: rgba(255, 255, 255, 0.035);
+      --card-strong: rgba(255, 255, 255, 0.055);
+      --text: #f5f5f4;
       --muted: #a1a1aa;
-      --line: #262a31;
+      --soft: #d4d4d8;
+      --line: rgba(255, 255, 255, 0.1);
+      --line-strong: rgba(255, 255, 255, 0.18);
       --accent: #d9471e;
+      --accent-soft: rgba(217, 71, 30, 0.14);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(217, 71, 30, 0.14), transparent 34rem),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 28rem),
+        var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     main {
-      width: min(920px, 92%);
+      width: min(1080px, 92%);
       margin: 0 auto;
-      padding: 72px 0;
+      padding: 44px 0 72px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 96px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--soft);
+      font-size: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 54px;
     }
 
     h1 {
-      font-size: clamp(40px, 8vw, 76px);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      margin: 0 0 24px;
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(52px, 9vw, 108px);
+      line-height: 0.88;
+      letter-spacing: -0.085em;
     }
 
     .intro {
-      max-width: 700px;
+      max-width: 710px;
+      margin: 30px 0 0;
       color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 32px;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.65;
+    }
+
+    .hero-side {
+      border-left: 1px solid var(--line);
+      padding-left: 24px;
+    }
+
+    .hero-side p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-side strong {
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      margin-bottom: 8px;
     }
 
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 64px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      margin-top: 34px;
     }
 
     .pill {
@@ -68,23 +144,73 @@
       color: var(--text);
       background: rgba(255, 255, 255, 0.03);
       font-size: 14px;
+      transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
     }
 
     .pill:hover {
       border-color: var(--accent);
       color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--line);
+      margin: 62px 0 82px;
+    }
+
+    .proof-item {
+      background: rgba(255, 255, 255, 0.035);
+      padding: 22px;
+      min-height: 132px;
+    }
+
+    .proof-item strong {
+      display: block;
+      color: var(--text);
+      font-size: 24px;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+    }
+
+    .proof-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     section {
-      margin-top: 48px;
+      margin-top: 74px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 20px;
     }
 
     .section-title {
+      margin: 0;
       font-size: 14px;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      margin-bottom: 18px;
+    }
+
+    .section-note {
+      max-width: 440px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: right;
     }
 
     .grid {
@@ -94,46 +220,109 @@
     }
 
     .card {
+      position: relative;
       border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 20px;
-      padding: 22px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
+        var(--card);
+      border-radius: 28px;
+      padding: 26px;
+      overflow: hidden;
+      min-height: 310px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at top right, rgba(217, 71, 30, 0.11), transparent 18rem);
+      opacity: 0;
+      transition: opacity 180ms ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-card {
+      min-height: 390px;
+      padding: 30px;
     }
 
     .wide-card {
       grid-column: 1 / -1;
-    }
-
-    .card h2 {
-      margin: 0 0 8px;
-      font-size: 22px;
-      letter-spacing: -0.03em;
-    }
-
-    .card p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 15px;
+      min-height: auto;
     }
 
     .meta {
+      position: relative;
+      z-index: 1;
       color: var(--accent);
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 18px;
+      margin: 0 0 20px;
+    }
+
+    .card h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      font-size: clamp(25px, 3vw, 36px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .card p {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .feature-card p {
+      font-size: 16px;
+      max-width: 560px;
     }
 
     .card-links {
+      position: relative;
+      z-index: 2;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      position: relative;
+      gap: 11px;
+      margin-top: auto;
     }
 
     .card-links a {
       font-size: 14px;
       color: var(--text);
       border-bottom: 1px solid var(--accent);
+      transition: color 180ms ease;
+    }
+
+    .card-links a:hover {
+      color: var(--accent);
+    }
+
+    .project-proof {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 26px 0 24px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--soft);
+      background: rgba(255, 255, 255, 0.025);
+      padding: 7px 10px;
+      font-size: 12px;
     }
 
     .preview-link {
@@ -145,18 +334,18 @@
       position: absolute;
       left: 0;
       bottom: 150%;
-      width: min(320px, 80vw);
+      width: min(340px, 80vw);
       padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
       background: #0f1115;
       color: var(--text);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
       opacity: 0;
       transform: translateY(8px);
       pointer-events: none;
       transition: opacity 180ms ease, transform 180ms ease;
-      z-index: 10;
+      z-index: 20;
     }
 
     .preview-link:hover .preview-card,
@@ -178,25 +367,98 @@
       line-height: 1.5;
     }
 
-    .note {
+    .open-source-card {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .pr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pr-link {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      color: var(--soft);
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.025);
+      transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+    }
+
+    .pr-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .closing {
       border-top: 1px solid var(--line);
-      margin-top: 64px;
-      padding-top: 24px;
+      margin-top: 74px;
+      padding-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
       color: var(--muted);
       font-size: 15px;
     }
 
-    @media (max-width: 720px) {
-      main {
-        padding: 48px 0;
+    .closing strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        margin-bottom: 72px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding-left: 0;
+        padding-top: 20px;
+      }
+
+      .proof-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-note {
+        text-align: left;
+        margin-top: 10px;
       }
 
       .grid {
         grid-template-columns: 1fr;
       }
 
-      .intro {
-        font-size: 16px;
+      .open-source-card {
+        grid-template-columns: 1fr;
+      }
+
+      .closing {
+        grid-template-columns: 1fr;
       }
 
       .preview-card {
@@ -204,57 +466,148 @@
         right: 0;
       }
     }
+
+    @media (max-width: 520px) {
+      main {
+        width: min(100% - 32px, 1080px);
+        padding: 28px 0 56px;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(54px, 18vw, 82px);
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+
+      .proof-strip {
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+      }
+
+      .card {
+        border-radius: 22px;
+        padding: 22px;
+      }
+
+      .feature-card {
+        min-height: auto;
+      }
+
+      .pr-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
   <main>
-    <h1>David Imafidon</h1>
-
-    <p class="intro">
-      I build useful web products with React, TypeScript, JavaScript, and modern
-      frontend tools. My work focuses on clean interfaces, practical software,
-      performance, and products shaped by real-world constraints.
-    </p>
-
-    <div class="links">
-      <a
-        class="pill"
-        href="https://drive.google.com/file/d/1dA2-W8Jz8k_QTiIUpH5jFcPJlc0yVHQ0/view?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Resume
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="David Imafidon home">
+        <img src="/logo.svg" alt="" aria-hidden="true" />
+        <span>David Imafidon</span>
       </a>
 
-      <a
-        class="pill"
-        href="https://github.com/Davemafy"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#open-source">Open Source</a>
+        <a href="mailto:imafidondavid1@gmail.com">Contact</a>
+      </nav>
+    </header>
 
-      <a
-        class="pill"
-        href="https://www.linkedin.com/in/david-imafidon/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LinkedIn
-      </a>
+    <section class="hero" aria-label="Introduction">
+      <div>
+        <h1>David Imafidon</h1>
 
-      <a class="pill" href="mailto:imafidondavid1@gmail.com">
-        Email
-      </a>
-    </div>
+        <p class="intro">
+          I build useful web products with React, TypeScript, JavaScript, and modern
+          frontend tools. My work focuses on clean interfaces, practical software,
+          performance, and products shaped by real-world constraints.
+        </p>
 
-    <section>
-      <p class="section-title">Featured Projects</p>
+        <div class="links">
+          <a
+            class="pill"
+            href="https://drive.google.com/file/d/1dA2-W8Jz8k_QTiIUpH5jFcPJlc0yVHQ0/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+
+          <a
+            class="pill"
+            href="https://github.com/Davemafy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a
+            class="pill"
+            href="https://www.linkedin.com/in/david-imafidon/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a class="pill" href="mailto:imafidondavid1@gmail.com">
+            Email
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <strong>Currently building</strong>
+        <p>
+          Ember & Sage, a restaurant website for food businesses, while growing
+          into stronger full-stack development with Node.js, APIs, databases,
+          testing, and system design.
+        </p>
+      </aside>
+    </section>
+
+    <section class="proof-strip" aria-label="Key proof points">
+      <div class="proof-item">
+        <strong>74%</strong>
+        <span>production landing page payload reduction at Ortho Technology.</span>
+      </div>
+
+      <div class="proof-item">
+        <strong>99</strong>
+        <span>desktop PageSpeed performance score on Brillo.</span>
+      </div>
+
+      <div class="proof-item">
+        <strong>5</strong>
+        <span>merged open-source/community pull requests.</span>
+      </div>
+
+      <div class="proof-item">
+        <strong>1 → full</strong>
+        <span>Trailer Park expanded from one dashboard mockup into a fuller product.</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-heading">
+        <p class="section-title">Featured Projects</p>
+        <p class="section-note">
+          Projects chosen for proof: performance, product thinking, UI execution,
+          and ability to extend incomplete ideas into shipped work.
+        </p>
+      </div>
 
       <div class="grid">
-        <article class="card">
+        <article class="card feature-card">
           <p class="meta">React · TypeScript · Supabase · TanStack Query</p>
 
           <h2>Brillo</h2>
@@ -264,6 +617,13 @@
             and learning progress. Scored 99 desktop performance, 91 mobile performance,
             and 100 across accessibility, best practices, and SEO on PageSpeed Insights.
           </p>
+
+          <div class="project-proof">
+            <span class="tag">99 desktop performance</span>
+            <span class="tag">91 mobile performance</span>
+            <span class="tag">Supabase-backed</span>
+            <span class="tag">Tested by 5 students</span>
+          </div>
 
           <div class="card-links">
             <a
@@ -292,7 +652,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card feature-card">
           <p class="meta">React · TypeScript · Tailwind CSS</p>
 
           <h2>Trailer Park</h2>
@@ -303,6 +663,13 @@
             product designer Emmanuel Edokpa into a fuller product with routing,
             reusable UI structure, discovery flows, and detail pages.
           </p>
+
+          <div class="project-proof">
+            <span class="tag">Designer validation</span>
+            <span class="tag">Dynamic routing</span>
+            <span class="tag">Discovery flows</span>
+            <span class="tag">Detail pages</span>
+          </div>
 
           <div class="card-links">
             <a
@@ -420,11 +787,17 @@
       </div>
     </section>
 
-    <section>
-      <p class="section-title">Open Source</p>
+    <section id="open-source">
+      <div class="section-heading">
+        <p class="section-title">Open Source</p>
+        <p class="section-note">
+          Small but real contributions: reading existing code, following patterns,
+          fixing UI issues, and responding to review feedback.
+        </p>
+      </div>
 
-      <div class="grid">
-        <article class="card wide-card">
+      <article class="card wide-card open-source-card">
+        <div>
           <p class="meta">GitHub · Pull Requests · Community Projects</p>
 
           <h2>Open Source Contributions</h2>
@@ -435,65 +808,79 @@
             Hausa and Igbo layout fixes, event/content updates, invisible text fixes,
             image/background updates, and asset-related improvements.
           </p>
+        </div>
 
-          <div class="card-links">
-            <a
-              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/83"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Hausa Layout Fix
-            </a>
+        <div class="pr-grid">
+          <a
+            class="pr-link"
+            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/83"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hausa Layout Fix
+          </a>
 
-            <a
-              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/82"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Hausa/Igbo Cards
-            </a>
+          <a
+            class="pr-link"
+            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/82"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hausa/Igbo Cards
+          </a>
 
-            <a
-              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/98"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Event Update
-            </a>
+          <a
+            class="pr-link"
+            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/98"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Event Update
+          </a>
 
-            <a
-              href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/99"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Text Visibility Fix
-            </a>
+          <a
+            class="pr-link"
+            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/99"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Text Visibility Fix
+          </a>
 
-            <a
-              href="https://github.com/react-native-nigeria-community/iboju.app/pull/12"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Iboju UI Update
-            </a>
+          <a
+            class="pr-link"
+            href="https://github.com/react-native-nigeria-community/iboju.app/pull/12"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Iboju UI Update
+          </a>
 
-            <a
-              href="https://github.com/react-native-nigeria-community/iboju.app/pull/8"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open PR
-            </a>
-          </div>
-        </article>
-      </div>
+          <a
+            class="pr-link"
+            href="https://github.com/react-native-nigeria-community/iboju.app/pull/8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open PR
+          </a>
+        </div>
+      </article>
     </section>
 
-    <p class="note">
-      Currently building Ember & Sage further and growing from frontend-heavy work
-      into stronger full-stack development with Node.js, APIs, databases, testing,
-      and system design.
-    </p>
+    <footer class="closing">
+      <p>
+        <strong>Current focus</strong>
+        Shipping Ember & Sage further, improving backend fundamentals, and building
+        stronger full-stack proof with APIs, databases, testing, and deployment.
+      </p>
+
+      <p>
+        <strong>Contact</strong>
+        Available for frontend internships, junior frontend roles, product-focused
+        collaborations, and practical web projects.
+      </p>
+    </footer>
   </main>
 </body>
 </html>
