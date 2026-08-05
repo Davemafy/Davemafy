@@ -4,25 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>David Imafidon — Portfolio</title>
+  <title>David Imafidon — Frontend Engineer</title>
+  <meta
+    name="description"
+    content="David Imafidon is a frontend engineer building polished, responsive web products with React and TypeScript."
+  />
+
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <link rel="shortcut icon" href="/logo.svg" />
 
   <style>
     :root {
-      --bg: #050505;
-      --bg-soft: #0a0b0d;
-      --panel: rgba(255, 255, 255, 0.045);
-      --panel-strong: rgba(255, 255, 255, 0.075);
-      --text: #f7f4ef;
-      --muted: #a7a29c;
-      --soft: #d8d2c8;
-      --line: rgba(255, 255, 255, 0.12);
-      --line-strong: rgba(255, 255, 255, 0.2);
+      --background: #0a0a09;
+      --surface: #11110f;
+      --text: #f2efe8;
+      --muted: #aaa59b;
+      --line: #292824;
       --accent: #d9471e;
-      --accent-soft: rgba(217, 71, 30, 0.14);
-      --radius: 30px;
-      --max: 1160px;
+      --max-width: 1180px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
     }
 
     * {
@@ -35,25 +37,11 @@
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 18% 0%, rgba(217, 71, 30, 0.18), transparent 34rem),
-        radial-gradient(circle at 85% 8%, rgba(255, 255, 255, 0.08), transparent 30rem),
-        linear-gradient(180deg, #070707 0%, #050505 42%, #070707 100%);
+      background: var(--background);
       color: var(--text);
+      font-family: var(--sans);
       line-height: 1.6;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 62%);
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -62,1123 +50,772 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      width: 100%;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
     }
 
     .page {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(var(--max-width), calc(100% - 48px));
       margin: 0 auto;
-      padding: 34px 0 72px;
-      position: relative;
-      z-index: 1;
     }
 
-    .topbar {
+    .site-header {
+      min-height: 96px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      margin-bottom: 92px;
+      justify-content: space-between;
+      gap: 32px;
+      border-bottom: 1px solid var(--line);
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--soft);
-      font-size: 14px;
+      font-size: 15px;
+      font-weight: 650;
       letter-spacing: -0.02em;
     }
 
-    .brand img {
-      width: 36px;
-      height: 36px;
-      border-radius: 11px;
-    }
-
-    .nav {
+    .site-nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 28px;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .nav a {
-      transition: color 180ms ease;
+    .site-nav a,
+    .text-link,
+    .project-links a,
+    .social-links a,
+    .pr-links a {
+      transition: color 160ms ease;
     }
 
-    .nav a:hover {
-      color: var(--text);
+    .site-nav a:hover,
+    .text-link:hover,
+    .project-links a:hover,
+    .social-links a:hover,
+    .pr-links a:hover {
+      color: var(--accent);
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
-      gap: 42px;
-      align-items: end;
-      margin-bottom: 28px;
+      min-height: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 112px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--accent);
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--muted);
       font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.13em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .kicker::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: var(--accent);
     }
 
     h1 {
+      max-width: 1040px;
       margin: 0;
-      max-width: 820px;
-      font-size: clamp(60px, 10vw, 132px);
-      line-height: 0.82;
-      letter-spacing: -0.105em;
+      font-family: var(--serif);
+      font-size: clamp(64px, 9.5vw, 132px);
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: -0.065em;
       text-wrap: balance;
     }
 
-    .intro {
-      margin: 30px 0 0;
-      max-width: 720px;
+    .hero-copy {
+      max-width: 690px;
+      margin: 38px 0 0;
       color: var(--muted);
-      font-size: clamp(17px, 2vw, 22px);
-      line-height: 1.65;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.7;
     }
 
-    .hero-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
-        rgba(255, 255, 255, 0.025);
-      padding: 24px;
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
-      overflow: hidden;
-    }
-
-    .hero-card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: start;
-      margin-bottom: 30px;
-    }
-
-    .hero-card small {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .hero-card strong {
-      display: block;
-      font-size: 20px;
-      line-height: 1.1;
-      letter-spacing: -0.05em;
-      margin-top: 6px;
-    }
-
-    .status-dot {
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
-      border-radius: 999px;
-      margin-top: 5px;
-      box-shadow: 0 0 0 8px rgba(217, 71, 30, 0.12);
-      flex: 0 0 auto;
-    }
-
-    .stack-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .stack-list span {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--soft);
-      background: rgba(255, 255, 255, 0.025);
-      padding: 10px 12px;
-      font-size: 13px;
-    }
-
-    .links {
+    .hero-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .pill {
-      border: 1px solid var(--line);
-      padding: 11px 15px;
-      border-radius: 999px;
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.035);
+      gap: 24px;
+      margin-top: 36px;
       font-size: 14px;
-      transition: border-color 180ms ease, color 180ms ease, background 180ms ease, transform 180ms ease;
     }
 
-    .pill:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-soft);
-      transform: translateY(-1px);
+    .text-link {
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .proof-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--line);
-      margin: 74px 0 96px;
-    }
-
-    .proof-item {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 24px;
-      min-height: 142px;
-    }
-
-    .proof-item strong {
-      display: block;
-      color: var(--text);
-      font-size: clamp(28px, 3vw, 40px);
-      letter-spacing: -0.07em;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .proof-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    section {
-      margin-top: 92px;
+    .section {
+      padding: 144px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .section-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: end;
-      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 72px;
     }
 
-    .section-title {
+    .section-label {
       margin: 0;
       color: var(--muted);
       font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .section-title strong {
-      display: block;
-      color: var(--text);
-      font-size: clamp(32px, 4vw, 54px);
-      line-height: 0.95;
-      letter-spacing: -0.07em;
-      text-transform: none;
-      margin-top: 12px;
-    }
-
-    .section-note {
-      max-width: 440px;
+    .section-heading h2 {
+      max-width: 760px;
       margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      text-align: right;
+      font-family: var(--serif);
+      font-size: clamp(44px, 6.5vw, 82px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.055em;
     }
 
-    .showcase {
+    .project-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .project {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 56px;
+      align-items: center;
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .case-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      min-height: 430px;
-      border: 1px solid var(--line);
-      border-radius: 36px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
-        var(--panel);
-      overflow: hidden;
-      padding: 22px;
-    }
-
-    .case-card:nth-child(even) {
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-
-    .case-card:nth-child(even) .case-copy {
-      order: 2;
-    }
-
-    .case-card:nth-child(even) .shot-wrap {
-      order: 1;
-    }
-
-    .case-copy {
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-width: 0;
-    }
-
-    .meta {
+    .project-number {
+      margin: 0 0 24px;
       color: var(--accent);
       font-size: 13px;
-      font-weight: 800;
-      margin: 0 0 22px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
-    .case-copy h2,
-    .support-card h2,
-    .open-source-card h2 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 5vw, 66px);
-      line-height: 0.88;
-      letter-spacing: -0.08em;
-    }
-
-    .case-copy p,
-    .support-card p,
-    .open-source-card p {
+    .project h3 {
       margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(46px, 6vw, 78px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .project-description {
+      max-width: 520px;
+      margin: 26px 0 0;
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.72;
+      line-height: 1.75;
     }
 
-    .project-proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 26px 0;
-    }
-
-    .tag {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--soft);
-      background: rgba(255, 255, 255, 0.025);
-      padding: 7px 10px;
-      font-size: 12px;
-    }
-
-    .card-links {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .card-links a {
+    .project-meta {
+      margin: 24px 0 0;
       color: var(--text);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 32px;
       font-size: 14px;
-      border-bottom: 1px solid var(--accent);
-      transition: color 180ms ease;
     }
 
-    .card-links a:hover {
-      color: var(--accent);
+    .project-links a {
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .shot-wrap {
-      position: relative;
-      min-height: 100%;
-      border-radius: 26px;
+    .project-media {
+      aspect-ratio: 16 / 10;
       overflow: hidden;
+      background: var(--surface);
       border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(217, 71, 30, 0.16), transparent 42%),
-        #101114;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
-    .shot-wrap::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.58)),
-        radial-gradient(circle at top right, rgba(217, 71, 30, 0.28), transparent 22rem);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .shot-wrap img {
-      width: 100%;
+    .project-media img {
       height: 100%;
-      min-height: 386px;
       object-fit: cover;
-      opacity: 0.86;
+      transition: transform 350ms ease;
+    }
+
+    .project:hover .project-media img {
       transform: scale(1.015);
     }
 
-    .shot-label {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      color: var(--soft);
-      font-size: 13px;
-    }
-
-    .shot-label span {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.36);
-      backdrop-filter: blur(14px);
-      padding: 8px 10px;
-    }
-
-    .support-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .support-card {
-      position: relative;
-      min-height: 520px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid var(--line);
-      border-radius: 36px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
-        var(--panel);
-      overflow: hidden;
-      padding: 22px;
-    }
-
-    .support-card h2 {
-      font-size: clamp(32px, 4vw, 52px);
-    }
-
-    .support-shot {
-      margin: -22px -22px 24px;
-      height: 250px;
-      border-bottom: 1px solid var(--line);
-      background: #101114;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .support-shot::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.62)),
-        radial-gradient(circle at top right, rgba(217, 71, 30, 0.18), transparent 18rem);
-    }
-
-    .support-shot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-
-    .preview-link {
-      position: relative;
-      display: inline-block;
-    }
-
-    .preview-card {
-      position: absolute;
-      left: 0;
-      bottom: 150%;
-      width: min(350px, 82vw);
-      padding: 14px;
-      border: 1px solid var(--line-strong);
-      border-radius: 16px;
-      background: #0f1115;
-      color: var(--text);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-      opacity: 0;
-      transform: translateY(8px);
-      pointer-events: none;
-      transition: opacity 180ms ease, transform 180ms ease;
-      z-index: 20;
-    }
-
-    .preview-link:hover .preview-card,
-    .preview-link:focus-within .preview-card {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .preview-card strong {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-
-    .preview-card span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .open-source-card {
-      border: 1px solid var(--line);
-      border-radius: 36px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
-        var(--panel);
-      padding: 30px;
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 34px;
-      overflow: hidden;
-    }
-
-    .open-source-card h2 {
-      font-size: clamp(36px, 5vw, 68px);
-    }
-
-    .pr-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      align-self: start;
-    }
-
-    .pr-link {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
-      color: var(--soft);
-      background: rgba(255, 255, 255, 0.025);
-      font-size: 14px;
-      min-height: 76px;
-      display: flex;
-      align-items: end;
-      transition: border-color 180ms ease, color 180ms ease, background 180ms ease, transform 180ms ease;
-    }
-
-    .pr-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-soft);
-      transform: translateY(-2px);
-    }
-
-    .closing {
-      margin-top: 96px;
-      padding-top: 28px;
+    .more-work {
       border-top: 1px solid var(--line);
+    }
+
+    .work-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      grid-template-columns: 0.7fr 1.3fr auto;
+      gap: 32px;
+      align-items: start;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-row h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .work-row p {
+      max-width: 650px;
+      margin: 0;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .closing strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 8px;
+    .row-link {
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    @media (max-width: 980px) {
+    .row-link:hover {
+      color: var(--accent);
+    }
+
+    .pr-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+      font-size: 13px;
+    }
+
+    .pr-links a {
+      color: var(--text);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-copy {
+      max-width: 760px;
+    }
+
+    .about-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 52px);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+    }
+
+    .about-copy p + p {
+      margin-top: 28px;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+
+    .contact {
+      padding: 120px 0 48px;
+    }
+
+    .contact h2 {
+      max-width: 900px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(52px, 8vw, 108px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .email-link {
+      display: inline-block;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.2vw, 24px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .email-link:hover {
+      color: var(--accent);
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 42px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    @media (max-width: 900px) {
       .hero {
+        min-height: auto;
+      }
+
+      .section-heading,
+      .about-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
 
-      .hero-card {
-        max-width: 620px;
-      }
-
-      .proof-strip {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .case-card,
-      .case-card:nth-child(even) {
+      .project {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
-      .case-card:nth-child(even) .case-copy,
-      .case-card:nth-child(even) .shot-wrap {
-        order: initial;
+      .project-copy {
+        max-width: 700px;
       }
 
-      .shot-wrap img {
-        min-height: 320px;
-      }
-
-      .support-grid {
+      .work-row {
         grid-template-columns: 1fr;
+        gap: 14px;
       }
 
-      .open-source-card {
-        grid-template-columns: 1fr;
+      .row-link {
+        justify-self: start;
       }
     }
 
     @media (max-width: 680px) {
       .page {
-        width: min(100% - 32px, var(--max));
-        padding-top: 24px;
+        width: min(100% - 32px, var(--max-width));
       }
 
-      .topbar {
-        margin-bottom: 66px;
+      .site-header {
+        min-height: 78px;
       }
 
-      .brand span {
+      .site-nav {
+        gap: 16px;
+      }
+
+      .site-nav a:nth-child(2) {
         display: none;
       }
 
-      .nav {
-        display: none;
+      .hero {
+        padding: 88px 0 96px;
       }
 
       h1 {
-        font-size: clamp(60px, 20vw, 86px);
+        font-size: clamp(54px, 17vw, 82px);
       }
 
-      .intro {
+      .hero-copy {
+        margin-top: 28px;
         font-size: 16px;
       }
 
-      .proof-strip {
-        grid-template-columns: 1fr;
-        border-radius: 24px;
+      .section {
+        padding: 96px 0;
       }
 
       .section-heading {
-        display: block;
+        margin-bottom: 48px;
       }
 
-      .section-note {
-        text-align: left;
-        margin-top: 12px;
+      .project {
+        padding: 54px 0;
       }
 
-      .case-card,
-      .support-card,
-      .open-source-card {
-        border-radius: 26px;
-        padding: 18px;
+      .project h3 {
+        font-size: clamp(44px, 14vw, 68px);
       }
 
-      .support-shot {
-        margin: -18px -18px 22px;
+      .project-media {
+        aspect-ratio: 4 / 3;
       }
 
-      .case-copy {
-        padding: 4px;
+      .contact {
+        padding-top: 96px;
       }
 
-      .shot-wrap {
-        border-radius: 20px;
+      .site-footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      .shot-wrap img {
-        min-height: 260px;
-      }
-
-      .pr-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .closing {
-        grid-template-columns: 1fr;
-      }
-
-      .preview-card {
-        left: auto;
-        right: 0;
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <header class="topbar">
+  <div class="page">
+    <header class="site-header">
       <a class="brand" href="/" aria-label="David Imafidon home">
-        <img src="/logo.svg" alt="" aria-hidden="true" />
-        <span>David Imafidon</span>
+        David Imafidon
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <nav class="site-nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
-        <a href="#open-source">Open Source</a>
+        <a href="#about">About</a>
         <a href="mailto:imafidondavid1@gmail.com">Contact</a>
       </nav>
     </header>
 
-    <section class="hero" aria-label="Introduction">
-      <div>
-        <p class="kicker">React · TypeScript · Product UI</p>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Frontend engineer · Abuja, Nigeria</p>
 
-        <h1>David Imafidon</h1>
+        <h1 id="hero-title">
+          I build polished web products with React and TypeScript.
+        </h1>
 
-        <p class="intro">
-          I build useful web products shaped by real-world constraints — clean interfaces,
-          fast experiences, and practical tools for students, food businesses, and small teams.
+        <p class="hero-copy">
+          I turn early ideas and incomplete designs into responsive, maintainable
+          interfaces that feel considered from the first screen to the empty state.
         </p>
 
-        <div class="links">
+        <div class="hero-links" aria-label="Profile links">
+          <a class="text-link" href="#work">View selected work ↓</a>
           <a
-            class="pill"
-            href="https://drive.google.com/file/d/1dA2-W8Jz8k_QTiIUpH5jFcPJlc0yVHQ0/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
-
-          <a
-            class="pill"
+            class="text-link"
             href="https://github.com/Davemafy"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            GitHub ↗
           </a>
-
           <a
-            class="pill"
-            href="https://www.linkedin.com/in/david-imafidon/"
+            class="text-link"
+            href="https://drive.google.com/file/d/1dA2-W8Jz8k_QTiIUpH5jFcPJlc0yVHQ0/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn
-          </a>
-
-          <a class="pill" href="mailto:imafidondavid1@gmail.com">
-            Email
+            Résumé ↗
           </a>
         </div>
-      </div>
+      </section>
 
-      <aside class="hero-card">
-        <div class="hero-card-top">
-          <div>
-            <small>Current focus</small>
-            <strong>Shipping stronger frontend work while growing into full-stack engineering.</strong>
-          </div>
-          <span class="status-dot" aria-hidden="true"></span>
+      <section class="section" id="work">
+        <div class="section-heading">
+          <p class="section-label">Selected work</p>
+          <h2>Products shaped beyond the supplied screen.</h2>
         </div>
 
-        <small>Working stack</small>
+        <div class="project-list">
+          <article class="project">
+            <div class="project-copy">
+              <p class="project-number">01 / Product expansion</p>
+              <h3>Trailer Park</h3>
 
-        <div class="stack-list">
-          <span>React / TypeScript / JavaScript</span>
-          <span>Tailwind CSS / Product UI</span>
-          <span>Supabase / APIs / Databases</span>
-          <span>Testing / Performance / Deployment</span>
-        </div>
-      </aside>
-    </section>
-
-    <section class="proof-strip" aria-label="Key proof points">
-      <div class="proof-item">
-        <strong>74%</strong>
-        <span>production landing page payload reduction at Ortho Technology.</span>
-      </div>
-
-      <div class="proof-item">
-        <strong>99</strong>
-        <span>desktop PageSpeed performance score on Brillo.</span>
-      </div>
-
-      <div class="proof-item">
-        <strong>5</strong>
-        <span>merged open-source/community pull requests.</span>
-      </div>
-
-      <div class="proof-item">
-        <strong>1 → full</strong>
-        <span>Trailer Park expanded from one dashboard mockup into a fuller product.</span>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="section-heading">
-        <p class="section-title">
-          Featured Work
-          <strong>Built, shipped, improved.</strong>
-        </p>
-
-        <p class="section-note">
-          The work below is chosen for proof: performance, product thinking,
-          UI execution, and the ability to extend incomplete ideas into working software.
-        </p>
-      </div>
-
-      <div class="showcase">
-        <article class="case-card">
-          <div class="case-copy">
-            <div>
-              <p class="meta">React · TypeScript · Supabase · TanStack Query</p>
-
-              <h2>Brillo</h2>
-
-              <p>
-                A student learning workspace for managing courses, notes, study activity,
-                and learning progress. Scored 99 desktop performance, 91 mobile performance,
-                and 100 across accessibility, best practices, and SEO on PageSpeed Insights.
+              <p class="project-description">
+                A media discovery product built during SIWES at JAM-Forte. I took
+                one supplied dashboard mockup and expanded it into a responsive
+                application with discovery, search, community, detail pages, and
+                complete interface states.
               </p>
 
-              <div class="project-proof">
-                <span class="tag">99 desktop performance</span>
-                <span class="tag">91 mobile performance</span>
-                <span class="tag">Supabase-backed</span>
-                <span class="tag">Tested by 5 students</span>
-              </div>
-            </div>
-
-            <div class="card-links">
-              <a
-                href="https://trybrillo.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live App
-              </a>
-
-              <a
-                href="https://github.com/Davemafy/brillo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Code
-              </a>
-
-              <a
-                href="https://drive.google.com/file/d/1dxH83nSAb4FZNvL1sMu_svzXdDdGeXAy/view"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Product Video
-              </a>
-            </div>
-          </div>
-
-          <div class="shot-wrap">
-            <img src="/assets/brillo.webp" alt="Screenshot of Brillo student learning workspace" />
-            <div class="shot-label">
-              <span>Learning workspace</span>
-              <span>Performance-focused</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="case-card">
-          <div class="case-copy">
-            <div>
-              <p class="meta">React · TypeScript · Tailwind CSS</p>
-
-              <h2>Trailer Park</h2>
-
-              <p>
-                A media discovery app for movies and shows, built during SIWES at
-                JAM-Forte Technologies. Expanded from a single dashboard mockup by
-                product designer Emmanuel Edokpa into a fuller product with routing,
-                reusable UI structure, discovery flows, and detail pages.
+              <p class="project-meta">
+                React · TypeScript · Tailwind CSS · Routing · Reusable UI structure
               </p>
 
-              <div class="project-proof">
-                <span class="tag">Designer validation</span>
-                <span class="tag">Dynamic routing</span>
-                <span class="tag">Discovery flows</span>
-                <span class="tag">Detail pages</span>
-              </div>
-            </div>
-
-            <div class="card-links">
-              <a
-                href="https://trailer-park-live.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live App
-              </a>
-
-              <a
-                href="https://github.com/Davemafy/trailer-park"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Code
-              </a>
-
-              <span class="preview-link">
+              <div class="project-links">
+                <a
+                  href="https://trailer-park-live.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live app ↗
+                </a>
+                <a
+                  href="https://github.com/Davemafy/trailer-park"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source ↗
+                </a>
                 <a
                   href="https://www.linkedin.com/posts/emmanueledokpa_productdesign-frontenddevelopment-figma-share-7483553596932960256-VVuh"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Featured by Designer
+                  Designer feature ↗
                 </a>
-
-                <span class="preview-card">
-                  <strong>Featured by Emmanuel Edokpa</strong>
-                  <span>
-                    The original design was a single dashboard mockup. I extended it
-                    into a fuller React product with additional pages, flows, and interactions.
-                  </span>
-                </span>
-              </span>
-            </div>
-          </div>
-
-          <div class="shot-wrap">
-            <img src="/assets/trailer-park.webp" alt="Screenshot of Trailer Park media discovery app" />
-            <div class="shot-label">
-              <span>Media discovery</span>
-              <span>Designer-featured</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-heading">
-        <p class="section-title">
-          In Progress
-          <strong>Current builds.</strong>
-        </p>
-
-        <p class="section-note">
-          These show the direction I am moving toward: practical tools for food
-          businesses, SMEs, ordering workflows, and inventory/sales tracking.
-        </p>
-      </div>
-
-      <div class="support-grid">
-        <article class="support-card">
-          <div>
-            <div class="support-shot">
-              <img src="/assets/ember-sage.webp" alt="Screenshot of Ember and Sage restaurant website" />
+              </div>
             </div>
 
-            <p class="meta">React · TypeScript · Tailwind CSS · React Router</p>
-
-            <h2>Ember & Sage</h2>
-
-            <p>
-              A restaurant website for food businesses, focused on menu discovery,
-              reservations, and ordering flows. Inspired by real food-business workflows
-              around menus, customer communication, and online presence.
-            </p>
-          </div>
-
-          <div class="card-links">
             <a
+              class="project-media"
+              href="https://trailer-park-live.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Trailer Park live application"
+            >
+              <img
+                src="/assets/trailer-park.webp"
+                alt="Trailer Park media discovery interface"
+              />
+            </a>
+          </article>
+
+          <article class="project">
+            <div class="project-copy">
+              <p class="project-number">02 / Interface direction</p>
+              <h3>Ember &amp; Sage</h3>
+
+              <p class="project-description">
+                A premium restaurant experience designed around menu discovery,
+                reservations, ordering, and mobile conversion. The project explores
+                how a strong visual system can remain practical across a complete
+                customer journey.
+              </p>
+
+              <p class="project-meta">
+                React · TypeScript · Tailwind CSS · React Router · Responsive UI
+              </p>
+
+              <div class="project-links">
+                <a
+                  href="https://embersage.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live site ↗
+                </a>
+                <a
+                  href="https://github.com/Davemafy/Ember-And-Sage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source ↗
+                </a>
+                <a
+                  href="https://www.figma.com/proto/YAQbdE0WLq5fB7GYnAzvGH/Rivelo-Portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Prototype ↗
+                </a>
+              </div>
+            </div>
+
+            <a
+              class="project-media"
               href="https://embersage.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Open Ember and Sage live website"
             >
-              Live App
+              <img
+                src="/assets/ember-sage.webp"
+                alt="Ember and Sage restaurant website"
+              />
             </a>
+          </article>
 
-            <a
-              href="https://github.com/Davemafy/Ember-And-Sage"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code
-            </a>
+          <article class="project">
+            <div class="project-copy">
+              <p class="project-number">03 / Full-stack product</p>
+              <h3>Brillo</h3>
 
-            <a
-              href="https://www.figma.com/proto/YAQbdE0WLq5fB7GYnAzvGH/Rivelo-Portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Prototype
-            </a>
-          </div>
-        </article>
+              <p class="project-description">
+                A student learning workspace for organising courses, notes, study
+                activity, and progress. It combines a Supabase-backed product flow
+                with measured frontend performance, including a 99 desktop
+                PageSpeed score.
+              </p>
 
-        <article class="support-card">
-          <div>
-            <div class="support-shot">
-              <img src="/assets/sowley-ai.webp" alt="Screenshot of Sowley AI SME tool prototype" />
+              <p class="project-meta">
+                React · TypeScript · Supabase · TanStack Query · Performance
+              </p>
+
+              <div class="project-links">
+                <a
+                  href="https://trybrillo.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live app ↗
+                </a>
+                <a
+                  href="https://github.com/Davemafy/brillo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source ↗
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1dxH83nSAb4FZNvL1sMu_svzXdDdGeXAy/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Product video ↗
+                </a>
+              </div>
             </div>
 
-            <p class="meta">Hackathon · Product Design · SME Tools</p>
-
-            <h2>Sowley AI</h2>
-
-            <p>
-              A team project for the OPay National Innovation Hackathon. I am handling
-              development and design as we explore AI-powered inventory and sales
-              tracking for SMEs.
-            </p>
-          </div>
-
-          <div class="card-links">
             <a
+              class="project-media"
+              href="https://trybrillo.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Brillo live application"
+            >
+              <img
+                src="/assets/brillo.webp"
+                alt="Brillo student learning workspace"
+              />
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="more-work-title">
+        <div class="section-heading">
+          <p class="section-label">More work</p>
+          <h2 id="more-work-title">Smaller proof, kept in proportion.</h2>
+        </div>
+
+        <div class="more-work">
+          <article class="work-row">
+            <h3>Sowley AI</h3>
+            <p>
+              An OPay National Innovation Hackathon project exploring AI-assisted
+              inventory and sales tracking for small businesses. I handled product
+              design and frontend development.
+            </p>
+            <a
+              class="row-link"
               href="https://www.figma.com/proto/fLYKd6vRRbEJE2NykGbf7w/Solway-AI?node-id=63-3&p=f&viewport=53%2C435%2C0.02&t=6AxnAQusJs1danU2-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A42&show-proto-sidebar=1&page-id=0%3A1"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Prototype
+              View prototype ↗
             </a>
+          </article>
 
+          <article class="work-row">
+            <h3>Open source</h3>
+            <div>
+              <p>
+                Five merged contributions across React Native Nigeria community
+                projects, covering layout, content, visibility, and asset fixes.
+              </p>
+
+              <div class="pr-links" aria-label="Selected pull requests">
+                <a href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/83" target="_blank" rel="noopener noreferrer">PR 83 ↗</a>
+                <a href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/82" target="_blank" rel="noopener noreferrer">PR 82 ↗</a>
+                <a href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/98" target="_blank" rel="noopener noreferrer">PR 98 ↗</a>
+                <a href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/99" target="_blank" rel="noopener noreferrer">PR 99 ↗</a>
+                <a href="https://github.com/react-native-nigeria-community/iboju.app/pull/12" target="_blank" rel="noopener noreferrer">PR 12 ↗</a>
+              </div>
+            </div>
             <a
-              href="https://drive.google.com/file/d/1_1tXvCLlSlcxHZUrQjFx3LZNOF1KoVkQ/view?usp=sharing"
+              class="row-link"
+              href="https://github.com/Davemafy"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Pitch Deck
+              GitHub ↗
             </a>
+          </article>
+        </div>
+      </section>
 
-            <a
-              href="https://drive.google.com/file/d/1XV6og5nRAXOtH1jV6arUY38-Rsk7uDa8/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Product Video
-            </a>
+      <section class="section" id="about">
+        <div class="about-grid">
+          <p class="section-label">About</p>
+
+          <div class="about-copy">
+            <p>
+              I care about the point where interface quality, product structure,
+              and engineering discipline meet.
+            </p>
+
+            <p>
+              I’m a computer science student and frontend engineer based in Abuja,
+              Nigeria. My strongest work is built with React and TypeScript, with
+              particular attention to responsive behaviour, reusable architecture,
+              complete UI states, and the small decisions that make software feel
+              finished. I’m currently deepening my backend knowledge while building
+              stronger end-to-end products.
+            </p>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="open-source">
-      <div class="section-heading">
-        <p class="section-title">
-          Open Source
-          <strong>Small fixes. Real codebases.</strong>
-        </p>
-
-        <p class="section-note">
-          Contributions across React Native Nigeria community projects: UI fixes,
-          language layout improvements, event updates, and review feedback.
-        </p>
-      </div>
-
-      <article class="open-source-card">
-        <div>
-          <p class="meta">GitHub · Pull Requests · Community Projects</p>
-
-          <h2>5 merged PRs</h2>
-
-          <p>
-            I have made 6 open-source/community pull requests, with 5 merged,
-            across React Native Nigeria community projects. The work includes
-            Hausa and Igbo layout fixes, event/content updates, invisible text fixes,
-            image/background updates, and asset-related improvements.
-          </p>
         </div>
+      </section>
 
-        <div class="pr-grid">
-          <a
-            class="pr-link"
-            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/83"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hausa Layout Fix
-          </a>
+      <section class="contact" aria-labelledby="contact-title">
+        <p class="section-label">Contact</p>
+        <h2 id="contact-title">Let’s build something that feels considered.</h2>
 
-          <a
-            class="pr-link"
-            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/82"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hausa/Igbo Cards
-          </a>
+        <a class="email-link" href="mailto:imafidondavid1@gmail.com">
+          imafidondavid1@gmail.com ↗
+        </a>
+      </section>
+    </main>
 
-          <a
-            class="pr-link"
-            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/98"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Event Update
-          </a>
+    <footer class="site-footer">
+      <span>© 2026 David Imafidon</span>
 
-          <a
-            class="pr-link"
-            href="https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website/pull/99"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Text Visibility Fix
-          </a>
-
-          <a
-            class="pr-link"
-            href="https://github.com/react-native-nigeria-community/iboju.app/pull/12"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Iboju UI Update
-          </a>
-
-          <a
-            class="pr-link"
-            href="https://github.com/react-native-nigeria-community/iboju.app/pull/8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open PR
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <footer class="closing">
-      <p>
-        <strong>Current focus</strong>
-        Shipping Ember & Sage further, improving backend fundamentals, and building
-        stronger full-stack proof with APIs, databases, testing, and deployment.
-      </p>
-
-      <p>
-        <strong>Contact</strong>
-        Available for frontend internships, junior frontend roles, product-focused
-        collaborations, and practical web projects.
-      </p>
+      <div class="social-links">
+        <a
+          href="https://github.com/Davemafy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/david-imafidon/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1dA2-W8Jz8k_QTiIUpH5jFcPJlc0yVHQ0/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Résumé
+        </a>
+      </div>
     </footer>
-  </main>
+  </div>
 </body>
 </html>
