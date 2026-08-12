@@ -29,5 +29,5 @@ Best proof so far: reduced a production landing page from **4.7MB to 1.2MB** at 
 ### ⚡ Now
 * Building with **React**, **TypeScript**, **Supabase**, and **Node.js**.
 * Growing from frontend-heavy work into stronger full-stack systems.
-* Proof of work: **https://davidmafy.vercel.app**
+* Proof of work: **https://davemafy.vercel.app**
 * 📬 **imafidondavid1@gmail.com**
